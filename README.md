@@ -38,4 +38,4 @@ ALT-H3
 6. JavaScript
 
 #### H4  Необходимо добавить JavaScript для полной функциональности сайта  
-ссылка на сайт:
+ссылка на сайт:https://aleksandree128.github.io/mesto/
