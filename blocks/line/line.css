@@ -1,0 +1,13 @@
+.line {
+  max-width: 880px;
+  height: 74px;
+  border-bottom: solid 1px #545454;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .line {
+    height: 56px;
+    min-width: 320px;
+  }
+}
