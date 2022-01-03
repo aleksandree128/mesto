@@ -6,7 +6,7 @@
   top: -38px;
   right: -38px;
   padding: 0;
-  background: transparent url("../../../images/close.svg");
+  background: transparent url("../../../images/close/close.svg");
 }
 
 .popup__close:hover {
@@ -20,7 +20,7 @@
     height: 20px;
     top: -36px;
     right: 1px;
-    background: transparent url("../../../images/close__mobile.svg");
+    background: transparent url("../../../images/close/close__mobile.svg");
   }
 }
 
