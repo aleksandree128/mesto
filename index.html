@@ -10,7 +10,7 @@
     <div class="page">
       <header class="header">
         <div class="line">
-          <a href="#"><img class="logo" src="images/header/header__logo.svg" alt="логотип" /></a>
+          <a href="#" target="_blank"><img class="logo" src="images/header/header__logo.svg" alt="логотип" /></a>
         </div>
       </header>
       <main class="content">
@@ -96,14 +96,14 @@
       <section class="popup">
         <div class="popup__container">
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form">
+          <form class="popup__form" name="popup__form" action="#" method="post">
             <fieldset class="popup__name">
               <input type="text" class="popup__itemOne" />
             </fieldset>
             <fieldset class="popup__aboutText">
               <input type="text" class="popup__itemTwo" />
             </fieldset>
-            <button class="popup__save" type="submit">Сохранить</button>
+            <button class="popup__save">Сохранить</button>
           </form>
           <button class="popup__close" type="button"></button>
         </div>
