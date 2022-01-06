@@ -1,6 +1,6 @@
-@import "../vendor/fonts/fonts.css";
 @import "../vendor/normalize.css";
-@import "../blocks/bac-color/bac-color.css";
+@import "../vendor/fonts/fonts.css";
+@import "../blocks/fonts/fonts.css";
 @import "../blocks/page/page.css";
 @import "../blocks/header/header.css";
 @import "../blocks/line/line.css";
@@ -11,9 +11,9 @@
 @import "../blocks/profile/__info/profile__info.css";
 @import "../blocks/profile/__title/profile__title.css";
 @import "../blocks/profile/__text/profile__text.css";
-@import "../blocks/profile/__editButton/profile__editButton.css";
-@import "../blocks/profile/edit/profile__edit.css";
-@import "../blocks/profile/__addButton/profile__addButton.css";
+@import "../blocks/profile/__edit-button/profile__edit-button.css";
+@import "../blocks/profile/__edit/profile__edit.css";
+@import "../blocks/profile/__add-button/profile__add-button.css";
 @import "../blocks/profile/__add/profile__add.css";
 @import "../blocks/elements/__lists/elements__lists.css";
 @import "../blocks/elements/__list/elements__list.css";
@@ -24,12 +24,10 @@
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__text/footer__text.css";
 @import "../blocks/popup/popup.css";
-@import "../blocks/popup/_opened/popup_opened.css";
+@import "../blocks/popup/__opened/popup_opened.css";
 @import "../blocks/popup/__container/popup__container.css";
 @import "../blocks/popup/__title/popup__title.css";
 @import "../blocks/popup/__close/popup__close.css";
 @import "../blocks/popup/__name/popup__name.css";
-@import "../blocks/popup/__aboutText/popup__aboutText.css";
-@import "../blocks/popup/__itemOne/popup__itemOne.css";
-@import "../blocks/popup/__itemTwo/popup__itemTwo.css";
+@import "../blocks/popup/__item/popup__item.css";
 @import "../blocks/popup/__save/popup__save.css";

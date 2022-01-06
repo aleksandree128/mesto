@@ -6,12 +6,10 @@
     <link rel="stylesheet" href="page/index.css" />
     <title>место</title>
   </head>
-  <body class="bac-color">
+  <body class="fonts">
     <div class="page">
       <header class="header">
-        <div class="line">
           <a href="#" target="_blank"><img class="logo" src="images/header/header__logo.svg" alt="логотип" /></a>
-        </div>
       </header>
       <main class="content">
         <section class="profile">
@@ -24,11 +22,11 @@
               Исследователь океана
             </p>
           </div>
-          <button class="profile__editButton" type="button">
-            <img class="profile__edit" src="images/vector/vector.svg" alt="редактировать" />
+          <button class="profile__edit-button" type="button">
+            <img class="profile__edit" src="images/vector/vector.svg" aria-label="редактировать" />
           </button>
-          <button class="profile__addButton" type="button">
-            <img class="profile__add" src="images/plus/plus.svg" alt="добавить" />
+          <button class="profile__add-button" type="button">
+            <img class="profile__add" src="images/plus/plus.svg" aria-label="добавить" />
           </button>
         </section>
         <section class="elements">
@@ -96,16 +94,12 @@
       <section class="popup">
         <div class="popup__container">
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="popup__form" action="#" method="post">
-            <fieldset class="popup__name">
-              <input type="text" class="popup__itemOne" />
-            </fieldset>
-            <fieldset class="popup__aboutText">
-              <input type="text" class="popup__itemTwo" />
-            </fieldset>
-            <button class="popup__save">Сохранить</button>
+          <form class="popup__name" name="popup__form" action="#" method="post">
+            <input type="text" class="popup__item popup__input_name" name="popup__input_name" />
+            <input type="text" class="popup__item popup__input_about-name" name="popup__input_about-name"/>
+            <button class="popup__save" type="submit">Сохранить</button>
           </form>
-          <button class="popup__close" type="button"></button>
+          <button class="popup__close" type="button" aria-label="закрыть"></button>
         </div>
       </section>
     </div>
