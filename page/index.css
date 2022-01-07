@@ -3,7 +3,6 @@
 @import "../blocks/fonts/fonts.css";
 @import "../blocks/page/page.css";
 @import "../blocks/header/header.css";
-@import "../blocks/line/line.css";
 @import "../blocks/logo/logo.css";
 @import "../blocks/content/content.css";
 @import "../blocks/profile/profile.css";
@@ -24,7 +23,7 @@
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__text/footer__text.css";
 @import "../blocks/popup/popup.css";
-@import "../blocks/popup/__opened/popup_opened.css";
+@import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/popup/__container/popup__container.css";
 @import "../blocks/popup/__title/popup__title.css";
 @import "../blocks/popup/__close/popup__close.css";

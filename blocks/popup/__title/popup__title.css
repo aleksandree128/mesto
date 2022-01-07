@@ -9,7 +9,7 @@
   min-width: 330px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .popup__title {
     min-width: 238px;
     font-size: 18px;
