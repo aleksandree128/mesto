@@ -31,67 +31,13 @@
         </section>
         <section class="elements">
           <ul class="elements__lists">
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/karachevsk.jpg" alt="карачевск" />
-              <div class="elements__font">
-                <h2 class="elements__text">Карачаевск</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/elbrus.jpg" alt="эльбрус" />
-              <div class="elements__font">
-                <h2 class="elements__text">Гора Эльбрус</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/dombai.jpg" alt="домбай" />
-              <div class="elements__font">
-                <h2 class="elements__text">Домбай</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/elbrus.jpg" alt="эльбрус" />
-              <div class="elements__font">
-                <h2 class="elements__text">Гора Эльбрус</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/dombai.jpg" alt="домбай" />
-              <div class="elements__font">
-                <h2 class="elements__text">Домбай</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
-            <li class="elements__list">
-              <img class="elements__photo" src="images/elements/karachevsk.jpg" alt="карачевск" />
-              <div class="elements__font">
-                <h2 class="elements__text">Карачаево-Ч...</h2>
-                <button class="elements__like" type="button">
-                  <img src="images/like/like.svg" alt="нравится" />
-                </button>
-              </div>
-            </li>
           </ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__text">© Коршинов Александр 2021</p>
       </footer>
-      <section class="popup">
+      <section class="popup popup_type_edit">
         <div class="popup__container">
           <h3 class="popup__title">Редактировать профиль</h3>
           <form class="popup__name" name="popup__form" action="#" method="post">
@@ -102,6 +48,35 @@
           <button class="popup__close" type="button" aria-label="закрыть"></button>
         </div>
       </section>
+      <section class="popup popup_type_add-card">
+        <div class="popup__container">
+          <h3 class="popup__title">Новое место</h3>
+          <form class="popup__name" name="popup__form" action="#" method="post">
+            <input type="text" class="popup__item popup__item_type_card-name" name="popup__input_name" placeholder="Название"/>
+            <input type="text" class="popup__item popup__item_type_card-link" name="popup__input_about-name" placeholder="Ссылка на картинку"/>
+            <button class="popup__save" type="submit">Создать</button>
+          </form>
+          <button class="popup__close" type="button" aria-label="закрыть"></button>
+        </div>
+      </section>
+      <section class="popup popup_type_image">
+        <div class="popup__container-image">
+          <button class="popup__close" type="button" aria-label="закрыть"></button>
+          <img class="popup__image-link" src=""/>
+          <h2 class="popup__place-title"></h2>
+        </div>
+      </section>
+      <template class="card">
+        <li class="elements__list">
+          <button class="elements__delete-button"><img src="images/group.png"> </button>
+          <img class="elements__photo" src=""/>
+          <div class="elements__font">
+            <h2 class="elements__text"></h2>
+            <button class="elements__like" type="button">
+            </button>
+          </div>
+        </li>
+      </template>
     </div>
     <script src="scripts/index.js"></script>
   </body>

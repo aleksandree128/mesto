@@ -5,6 +5,7 @@
   background: transparent;
   width: 22px;
   height: 19px;
+  background-image: url("../../../images/like/like.svg");
 }
 
 .elements__like:hover {
@@ -12,8 +13,3 @@
   cursor: pointer;
 }
 
-.elements__like:active {
-  opacity: 100%;
-  background-image: url("../../../images/like/black-like.png");
-  background-repeat: no-repeat;
-}
