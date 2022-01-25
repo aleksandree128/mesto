@@ -35,14 +35,14 @@
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__text">© Коршинов Александр 2021</p>
+        <p class="footer__text">&#169; Коршинов Александр 2021</p>
       </footer>
       <section class="popup popup_type_edit">
         <div class="popup__container">
           <h3 class="popup__title">Редактировать профиль</h3>
           <form class="popup__name" name="popup__form" action="#" method="post">
-            <input type="text" class="popup__item popup__item_type_name" name="popup__input_name" />
-            <input type="text" class="popup__item popup__item_type_about-name" name="popup__input_about-name"/>
+            <input type="text" class="popup__item popup__item_type_name" name="popup__input_name" placeholder="ФИО" required="required"/>
+            <input type="text" class="popup__item popup__item_type_about-name" name="popup__input_about-name" placeholder="о себе" required="required"/>
             <button class="popup__save" type="submit">Сохранить</button>
           </form>
           <button class="popup__close" type="button" aria-label="закрыть"></button>
@@ -52,8 +52,8 @@
         <div class="popup__container">
           <h3 class="popup__title">Новое место</h3>
           <form class="popup__name" name="popup__form" action="#" method="post">
-            <input type="text" class="popup__item popup__item_type_card-name" name="popup__input_name" placeholder="Название"/>
-            <input type="text" class="popup__item popup__item_type_card-link" name="popup__input_about-name" placeholder="Ссылка на картинку"/>
+            <input type="text" class="popup__item popup__item_type_card-name" name="popup__input_name" placeholder="Название" required="required"/>
+            <input type="url" class="popup__item popup__item_type_card-link" name="popup__input_about-name" placeholder="Ссылка на картинку" required="required"/>
             <button class="popup__save" type="submit">Создать</button>
           </form>
           <button class="popup__close" type="button" aria-label="закрыть"></button>
