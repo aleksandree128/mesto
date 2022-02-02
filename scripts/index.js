@@ -56,7 +56,7 @@ const inputCardLink = document.querySelector(".popup__item_type_card-link");
 const inputProfileTitle = document.querySelector(".popup__item_type_name");
 const inputProfileText = document.querySelector(".popup__item_type_about-name");
 
-const list = document.querySelector(".elements__lists");
+const cardsContainer = document.querySelector(".elements__lists");
 const cardTemplate = document.querySelector(".card").content;
 
 function disableToggleButton(form) {
@@ -101,7 +101,7 @@ addCardButton.addEventListener("click", () => openPopup(newCardModalWindow));
 closeAddCardModalButton.addEventListener("click", () =>
     closePopup(newCardModalWindow)
 );
-closeOpenImageButton.addEventListener("click", () => openPopup(newImageModalWindow));
+closeOpenImageButton.addEventListener("click", () => closePopup(newImageModalWindow));
 
 //загрузка картинок
 addCardForm.addEventListener("submit", (evt) => {
@@ -156,7 +156,7 @@ function createCard(cardData) {
         document.querySelector(".popup__place-title").textContent =
             cardText.textContent;
         document.querySelector(".popup__image-link").src = cardImage.src;
-        document.querySelector(".popup__place-title").alt = cardImage.alt;
+        document.querySelector(".popup__image-link").alt = cardImage.alt;
         openPopup(openImageModal);
     }
     cardImage.addEventListener("click", () => openPopupImage(newImageModalWindow));
@@ -166,7 +166,7 @@ function createCard(cardData) {
 
 function addCard(cardData) {
     const cardElement = createCard(cardData);
-    list.prepend(cardElement);
+    cardsContainer.prepend(cardElement);
 }
 initialCards.forEach(addCard);
 
