@@ -42,9 +42,9 @@
           <h3 class="popup__title">Редактировать профиль</h3>
           <form id="form__input" class="popup__name" name="popup__form" action="#" method="post" novalidate>
             <input id="firstname" type="text" class="popup__item popup__item_type_name" name="popup__input_name" placeholder="ФИО" required minlength="2" maxlength="40"/>
-            <span id="error-firstname" class="form__input-error form__input-error_visible"></span>
+            <span id="error-firstname" class="popup__input-error popup__input-error_visible"></span>
             <input id="about" type="text" class="popup__item popup__item_type_about-name" name="popup__input_about-name" placeholder="о себе" required minlength="2" maxlength="200"/>
-            <span id="error-about" class="form__input-error form__input-error_visible"></span>
+            <span id="error-about" class="popup__input-error popup__input-error_visible"></span>
             <button class="popup__save" type="submit">Сохранить</button>
           </form>
           <button class="popup__close" type="button" aria-label="закрыть"></button>
@@ -55,9 +55,9 @@
           <h3 class="popup__title">Новое место</h3>
           <form class="popup__name" name="popup__form" action="#" method="post" novalidate>
             <input id="title" type="text" class="popup__item popup__item_type_card-name" name="popup__input_name" placeholder="Название" minlength="2" maxlength="30" required/>
-            <span id="error-title" class="form__input-error form__input-error_visible"></span>
+            <span id="error-title" class="popup__input-error popup__input-error_visible"></span>
             <input id="link" type="url" class="popup__item popup__item_type_card-link" name="popup__input_about-name" placeholder="Ссылка на картинку" required/>
-            <span id="error-link" class="form__input-error form__input-error_visible"></span>
+            <span id="error-link" class="popup__input-error popup__input-error_visible"></span>
             <button class="popup__save" type="submit">Создать</button>
           </form>
           <button class="popup__close" type="button" aria-label="закрыть"></button>

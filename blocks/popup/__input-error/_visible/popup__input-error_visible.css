@@ -1,4 +1,4 @@
-.form__input-error_visible {
+.popup__input-error_visible {
   color: #FF0000;
   opacity: 1;
   font-size: 12px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  .form__input-error_visible {
+  .popup__input-error_visible {
     padding-left: 22px;
   }
 }

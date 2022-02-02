@@ -174,8 +174,8 @@ enableValidation({
     formSelector: ".popup__name",
     inputSelector: ".popup__item",
     buttonSaveSelector: ".popup__save",
-    errorVisibleClass: "form__input-error_visible",
-    errorSelector: ".form__input-error",
+    errorVisibleClass: "popup__input-error_visible",
+    errorSelector: ".popup__input-error",
     inputErrorClass: "popup__item_type_error",
     inactiveButtonClass: "popup__save_disabled",
 });
