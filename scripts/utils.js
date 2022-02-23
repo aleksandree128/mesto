@@ -1,4 +1,4 @@
-import {keyClose} from "./index.js";
+import {keyClose} from "./constance.js";
 
 export function openPopup(modal) {
     modal.classList.add("popup_opened");

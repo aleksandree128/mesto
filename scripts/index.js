@@ -1,4 +1,4 @@
-import {initialCards, validatorConfig, newCardModalWindow, newImageModalWindow, profileModalWindow} from "./constance.js";
+import {initialCards, validatorConfig, newCardModalWindow, newImageModalWindow, profileModalWindow, closePopup} from "./constance.js";
 import {FormValidator} from "./FormValidator.js";
 import {openPopup} from "./utils.js";
 import {Card} from "./Card.js";
@@ -41,18 +41,6 @@ function disableToggleButton(form) {
     const button=form.querySelector('.popup__save')
     button.classList.add('popup__save_disabled');
     button.setAttribute("disabled", "");
-}
-
-function closePopup(modal) {
-    modal.classList.remove("popup_opened");
-    document.removeEventListener("keydown", keyClose);
-}
-
-export function keyClose(evt) {
-    if (evt.key === "Escape") {
-        const openedPopup = document.querySelector(".popup_opened");
-        closePopup(openedPopup);
-    }
 }
 
 popups.forEach((popup) => {
