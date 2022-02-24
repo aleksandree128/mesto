@@ -47,8 +47,8 @@ export function keyClose(evt) {
     }
 }
 
-export let cardImageLink=document.querySelector(".popup__image-link");
-export let cardImageAlt=document.querySelector(".popup__image-link");
+export const cardImageLink=document.querySelector(".popup__image-link");
+export const cardImageAlt=document.querySelector(".popup__image-link");
 export const profileModalWindow = document.querySelector(".popup_type_edit");
 export const newCardModalWindow = document.querySelector(".popup_type_add-card");
 export const newImageModalWindow = document.querySelector(".popup_type_image");

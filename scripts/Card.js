@@ -14,7 +14,7 @@ export class Card {
 
     _deleteHandler = () => {
         this._cardElement.remove();
-        this._cardElement='';
+        this._cardElement=null;
     };
 
     _openPopupImage = () => {
