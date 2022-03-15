@@ -35,20 +35,5 @@ export const validatorConfig ={
     inactiveButtonClass: "popup__save_disabled",
 };
 
-export function closePopup(modal) {
-    modal.classList.remove("popup_opened");
-    document.removeEventListener("keydown", keyClose);
-}
-
-export function keyClose(evt) {
-    if (evt.key === "Escape") {
-        const openedPopup = document.querySelector(".popup_opened");
-        closePopup(openedPopup);
-    }
-}
-
-export const cardImageLink=document.querySelector(".popup__image-link");
-export const cardImageAlt=document.querySelector(".popup__image-link");
 export const profileModalWindow = document.querySelector(".popup_type_edit");
 export const newCardModalWindow = document.querySelector(".popup_type_add-card");
-export const newImageModalWindow = document.querySelector(".popup_type_image");

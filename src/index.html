@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="page/index.css" />
     <title>место</title>
   </head>
   <body class="fonts">
     <div class="page">
       <header class="header">
-        <a href="#" target="_blank"><img class="logo" src="images/header/header__logo.svg" alt="логотип" /></a>
+        <a href="#" target="_blank"><img class="logo" src="<%=require(../src/images/header/header__logo.svg)%>" alt="логотип" /></a>
       </header>
       <main class="content">
         <section class="profile">
-          <img class="profile__avatar" src="images/profile/profile.png" alt="аватар" />
+          <img class="profile__avatar" src="<%=require(../src/images/profile/profile.png)%>" alt="аватар" />
           <div class="profile__info">
             <h1 class="profile__title">
               Жак-Ив Кусто
@@ -23,10 +22,10 @@
             </p>
           </div>
           <button class="profile__edit-button" type="button">
-            <img class="profile__edit" src="images/vector/vector.svg" alt="редактировать" />
+            <img class="profile__edit" src="<%=require(../src/images/vector/vector.svg)%>" alt="редактировать" />
           </button>
           <button class="profile__add-button" type="button">
-            <img class="profile__add" src="images/plus/plus.svg" alt="добавить" />
+            <img class="profile__add" src="<%=require(../src/images/plus/plus.svg)%>" alt="добавить" />
           </button>
         </section>
         <section class="elements">
@@ -43,7 +42,8 @@
           <form id="form__input" class="popup__name" name="popup__form" action="#" method="post" novalidate>
             <input id="firstname" type="text" class="popup__item popup__item_type_name" name="popup__input_name" placeholder="ФИО" required minlength="2" maxlength="40"/>
             <span id="error-firstname" class="popup__input-error popup__input-error_visible"></span>
-            <input id="about" type="text" class="popup__item popup__item_type_about-name" name="popup__input_about-name" placeholder="о себе" required minlength="2" maxlength="200"/>
+            <input id="about" type="text" class="popup__item popup__item_type_about-name" name="popup__input_about_name"
+                   placeholder="о себе" required minlength="2" maxlength="200"/>
             <span id="error-about" class="popup__input-error popup__input-error_visible"></span>
             <button class="popup__save" type="submit">Сохранить</button>
           </form>
@@ -72,7 +72,7 @@
       </section>
       <template class="card">
         <li class="elements__list">
-          <button class="elements__delete-button"><img src="images/group.png" alt="удалить"> </button>
+          <button class="elements__delete-button"><img src="<%=require('../src/images/group.png')%>" alt="удалить"> </button>
           <img class="elements__photo"/>
           <div class="elements__font">
             <h2 class="elements__text"></h2>
@@ -82,6 +82,5 @@
         </li>
       </template>
     </div>
-    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

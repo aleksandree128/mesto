@@ -1,11 +1,9 @@
-import { openPopup } from "./utils.js";
-import { newImageModalWindow,cardImageAlt,cardImageLink } from "./constance.js";
 
 export class Card {
-    constructor(cardData, cardTemplateSelector) {
+    constructor(cardData, cardTemplateSelector, handleImageClick) {
         this._cardData = cardData;
         this._template = document.querySelector(cardTemplateSelector).content.querySelector(".elements__list");
-
+        this._handlImageClick=handleImageClick;
     }
 
     _likeClickHandler = () => {
@@ -17,18 +15,10 @@ export class Card {
         this._cardElement=null;
     };
 
-    _openPopupImage = () => {
-        document.querySelector(".popup__place-title").textContent =
-            this._cardText.textContent;
-        cardImageLink.src = this._cardImage.src;
-        cardImageAlt.alt = this._cardImage.alt;
-        openPopup(newImageModalWindow);
-    };
-
     _setEventListener() {
         this._deleteButton.addEventListener("click", this._deleteHandler);
         this._cardLike.addEventListener("click", this._likeClickHandler);
-        this._cardImage.addEventListener("click", this._openPopupImage);
+        this._cardImage.addEventListener("click", this._handlImageClick);
     }
 
     createCard() {
