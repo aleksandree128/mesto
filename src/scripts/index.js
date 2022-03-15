@@ -5,7 +5,7 @@ import {Section} from "./Section.js";
 import {PopupWithImage} from "./PopupWithImage.js";
 import {PopupWithForm} from "./PopupWithForm.js";
 import {UserInfo} from "./UserInfo.js";
-//import "../page/index.css"
+import "../page/index.css"
 //формы
 
 const profileFormValidator = profileModalWindow.querySelector(".popup__name");
