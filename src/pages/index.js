@@ -15,13 +15,11 @@ import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 import "../pages/index.css";
 
+editProfileButton.addEventListener("click", () => openPopupEdit());
+addCardButton.addEventListener("click", () => {addCardFormValidator.disableButton(); addCardPopup.open()});
+
 editFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
-
-//клики
-editProfileButton.addEventListener("click", () => openPopupEdit());
-
-addCardButton.addEventListener("click", () => addCardPopup.open());
 
 //закгрузка формы профиля
 const handleProfileFormSubmit = (data) => {
@@ -47,8 +45,14 @@ function createCard(item) {
 
 function addCard(cardData) {
     const cardElement = createCard(cardData);
+    console.log(cardData)
     section.addItem(cardElement);
+}
+
+function handleAddCardSubmit(item){
+    addCard(item)
     addCardPopup.close();
+
 }
 
 const section = new Section(
@@ -56,7 +60,7 @@ const section = new Section(
     ".elements__lists"
 );
 const imagePopup = new PopupWithImage(".popup_type_image");
-const addCardPopup = new PopupWithForm(".popup_type_add-card", addCard);
+const addCardPopup = new PopupWithForm(".popup_type_add-card", handleAddCardSubmit);
 const editProfilePopup = new PopupWithForm(
     ".popup_type_edit",
     handleProfileFormSubmit
@@ -65,6 +69,7 @@ const userInfo = new UserInfo({
     profileNameSelector: ".profile__title",
     profileJobSelector: ".profile__text",
 });
+
 section.renderItems();
 imagePopup.setEventListeners();
 addCardPopup.setEventListeners();
