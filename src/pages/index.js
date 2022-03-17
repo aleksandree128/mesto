@@ -45,7 +45,6 @@ function createCard(item) {
 
 function addCard(cardData) {
     const cardElement = createCard(cardData);
-    console.log(cardData)
     section.addItem(cardElement);
 }
 

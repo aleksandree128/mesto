@@ -60,8 +60,5 @@ export class FormValidator {
             });
         });
         this._toggleButton();
-
     }
-
-
 }
