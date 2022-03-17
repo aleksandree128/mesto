@@ -18,12 +18,11 @@ export class Popup {
         }
     }
 
-
     setEventListeners(){
         const closeButton=this._popup.querySelector('.popup__close')
         this._popup.addEventListener('click', (e)=>{
-            if(!e.target.closest('.popup__container') || e.target.closest('.popup__container-image') || e.target===closeButton){
-                this.close()
+            if(e.target.classList.contains('popup_opened') || e.target===closeButton ){
+                this.close(this._popup)
             }
         })
     }

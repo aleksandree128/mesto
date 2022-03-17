@@ -1,3 +1,5 @@
+import {FormValidator} from "../components/FormValidator";
+
 export const initialCards = [
     {
         name: "Архыз",
@@ -25,7 +27,7 @@ export const initialCards = [
     },
 ];
 
-export const validatorConfig ={
+const validatorConfig ={
     formSelector: ".popup__name",
     inputSelector: ".popup__item",
     buttonSaveSelector: ".popup__save",
@@ -35,5 +37,19 @@ export const validatorConfig ={
     inactiveButtonClass: "popup__save_disabled",
 };
 
-export const profileModalWindow = document.querySelector(".popup_type_edit");
-export const newCardModalWindow = document.querySelector(".popup_type_add-card");
+const profileModalWindow = document.querySelector(".popup_type_edit");
+const newCardModalWindow = document.querySelector(".popup_type_add-card");
+
+const profileFormValidator = profileModalWindow.querySelector(".popup__name");
+const editCardFormValidator = newCardModalWindow.querySelector(".popup__name");
+export const editProfileButton = document.querySelector(".profile__edit-button");
+export const addCardButton = document.querySelector(".profile__add-button");
+
+export const inputProfileTitle = document.querySelector(".popup__item_type_name");
+export const inputProfileText = document.querySelector(".popup__item_type_about-name");
+
+export const cardTemplateSelector = ".card";
+
+export const editFormValidator=new FormValidator(validatorConfig, profileFormValidator);
+export const addCardFormValidator=new FormValidator(validatorConfig, editCardFormValidator);
+
