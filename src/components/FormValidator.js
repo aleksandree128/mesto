@@ -31,8 +31,7 @@ export class FormValidator {
             this._button.classList.remove(inactiveButtonClass);
             this._button.removeAttribute("disabled");
         } else {
-            this._button.classList.add(inactiveButtonClass);
-            this._button.setAttribute("disabled", "");
+            this.disableButton()
         }
     }
 

@@ -16,7 +16,10 @@ import { UserInfo } from "../components/UserInfo.js";
 import "../pages/index.css";
 
 editProfileButton.addEventListener("click", () => openPopupEdit());
-addCardButton.addEventListener("click", () => {addCardFormValidator.disableButton(); addCardPopup.open()});
+addCardButton.addEventListener("click", () => {
+    addCardFormValidator.disableButton();
+    addCardPopup.open();
+});
 
 editFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
@@ -48,10 +51,9 @@ function addCard(cardData) {
     section.addItem(cardElement);
 }
 
-function handleAddCardSubmit(item){
-    addCard(item)
+function handleAddCardSubmit(item) {
+    addCard(item);
     addCardPopup.close();
-
 }
 
 const section = new Section(
@@ -59,7 +61,10 @@ const section = new Section(
     ".elements__lists"
 );
 const imagePopup = new PopupWithImage(".popup_type_image");
-const addCardPopup = new PopupWithForm(".popup_type_add-card", handleAddCardSubmit);
+const addCardPopup = new PopupWithForm(
+    ".popup_type_add-card",
+    handleAddCardSubmit
+);
 const editProfilePopup = new PopupWithForm(
     ".popup_type_edit",
     handleProfileFormSubmit
