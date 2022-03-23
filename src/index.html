@@ -12,14 +12,12 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img class="profile__avatar" src="<%=require('../src/images/profile/profile.png')%>" alt="аватар" />
+          <button class="profile__avatar-button">
+            <img class="profile__avatar" src=""/>
+          </button>
           <div class="profile__info">
-            <h1 class="profile__title">
-              Жак-Ив Кусто
-            </h1>
-            <p class="profile__text">
-              Исследователь океана
-            </p>
+            <h1 class="profile__title"></h1>
+            <p class="profile__text"></p>
           </div>
           <button class="profile__edit-button" type="button">
             <img class="profile__edit" src="<%=require('../src/images/vector/vector.svg')%>" alt="редактировать" />
@@ -63,6 +61,17 @@
           <button class="popup__close" type="button" aria-label="закрыть"></button>
         </div>
       </section>
+      <section class="popup popup_type_update-avatar">
+        <div class="popup__container">
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form class="popup__name" name="update__avatar" action="#" method="post" novalidate>
+            <input id="avatar" type="url" class="popup__item popup__item_type_avatar-link" name="link" placeholder="Ссылка на картинку" required/>
+            <span id="error-avatar" class="popup__input-error popup__input-error_visible"></span>
+            <button class="popup__save" type="submit">Создать</button>
+          </form>
+          <button class="popup__close" type="button" aria-label="закрыть"></button>
+        </div>
+      </section>
       <section class="popup popup_type_image">
         <div class="popup__container-image">
           <button class="popup__close" type="button" aria-label="закрыть"></button>
@@ -78,9 +87,19 @@
             <h2 class="elements__text"></h2>
             <button class="elements__like" type="button">
             </button>
+            <span  class="elements__like-count"></span>
           </div>
         </li>
       </template>
+      <section class="popup popup_type_delete-card">
+        <div class="popup__container">
+          <h3 class="popup__title">Вы уверены</h3>
+          <form class="popup__name" name="add__card" action="#" method="post" novalidate>
+            <button class="popup__save" type="submit">Да</button>
+          </form>
+          <button class="popup__close" type="button" aria-label="закрыть"></button>
+        </div>
+      </section>
     </div>
   </body>
 </html>

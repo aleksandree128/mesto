@@ -58,6 +58,7 @@ export class FormValidator {
                 this._validateInput(input);
             });
         });
+
         this._toggleButton();
     }
 }
