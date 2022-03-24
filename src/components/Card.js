@@ -32,8 +32,8 @@ export class Card {
     setLikes(newLikes){
         this._likes=newLikes
         const likeCountElement=this._cardElement.querySelector('.elements__like-count')
-        likeCountElement.textContent=this._likes.length
 
+        likeCountElement.textContent=this._likes.length
         if(this.isLiked()){
             this._fillLike()
         }else {
@@ -44,13 +44,14 @@ export class Card {
         this._cardLike.classList.add("elements__like_black");
     }
     _emptylLike(){
+
         this._cardLike.classList.remove("elements__like_black");
     }
-/*
+
     likeClickHandler = () => {
         this._cardLike.classList.toggle("elements__like_black");
     }
-    */
+
     createCard() {
         this._cardElement = this._template.cloneNode(true);
         this._cardImage = this._cardElement.querySelector(".elements__photo");

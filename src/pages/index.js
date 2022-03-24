@@ -39,8 +39,8 @@ api.getInitialCards().then((cardList) => {
         const card = createCard({
             name: data.name,
             link: data.link,
-            _id: data._id,
             likes: data.likes,
+            _id: data._id,
             userId: userId,
             ownerId: data.owner._id,
         });
@@ -86,14 +86,19 @@ function openPopupEdit() {
     editProfilePopup.open();
 }
 
-function createCard(item) {
+function createCard(data) {
     const card = new Card(
-        item,
-        cardTemplateSelector,
-        () => {
-            imagePopup.open(item.name, item.link);
+        {
+        name: data.name,
+        link: data.link,
+        likes: data.likes,
+        _id: data._id,
+        userId: userId,
+        ownerId: data._id},cardTemplateSelector,
+        ()=>{
+            imagePopup.open(data.name, data.link);
         },
-        () => {
+        ()=>{
             deleteCard.open();
             deleteCard.changeSubmitHandler(() => {
                 api
@@ -106,8 +111,7 @@ function createCard(item) {
                         console.log(`Ошибка: ${err}`);
                     });
             });
-        },
-        () => {
+        },() => {
             if (card.isLiked()) {
                 api
                     .deleteLike(card.getId())
@@ -121,6 +125,7 @@ function createCard(item) {
                 api
                     .addLike(card.getId())
                     .then((res) => {
+
                         card.setLikes(res.likes);
                     })
                     .catch((err) => {
@@ -128,7 +133,8 @@ function createCard(item) {
                     });
             }
         }
-    );
+
+    )
     const cardElement = card.createCard();
     return cardElement;
 }
@@ -199,3 +205,6 @@ addCardPopup.setEventListeners();
 editProfilePopup.setEventListeners();
 deleteCard.setEventListeners();
 updateAvatar.setEventListeners();
+
+
+
