@@ -4,10 +4,11 @@ import {
     inputProfileText,
     inputProfileTitle,
     cardTemplateSelector,
-    editFormValidator,
-    addCardFormValidator,
+    profileFormValidator,
+    editCardFormValidator,
     profileAvatarButton,
-    updateAvatarValidator,
+    avatarUpdateValidator,
+    validatorConfig
 } from "../utils/constants.js";
 import { Card } from "../components/Card.js";
 import { Section } from "../components/Section.js";
@@ -16,6 +17,11 @@ import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 import "../pages/index.css";
 import { api } from "../components/Api.js";
+import {FormValidator} from "../components/FormValidator";
+
+const editFormValidator=new FormValidator(validatorConfig, profileFormValidator);
+const addCardFormValidator=new FormValidator(validatorConfig, editCardFormValidator);
+const updateAvatarValidator=new FormValidator(validatorConfig, avatarUpdateValidator)
 
 updateAvatarValidator.enableValidation();
 editFormValidator.enableValidation();
@@ -33,7 +39,7 @@ api.getInitialCards().then((cardList) => {
         const card = createCard({
             name: data.name,
             link: data.link,
-            id: data._id,
+            _id: data._id,
             likes: data.likes,
             userId: userId,
             ownerId: data.owner._id,
@@ -61,7 +67,8 @@ const handleProfileFormSubmit = (data) => {
     api
         .editProfile(popup__input_name, popup__input_about_name)
         .then((res) => {
-            userInfo.setUserInfo(res.popup__input_name, res.popup__input_about_name);
+            userInfo.setUserInfo(popup__input_name, popup__input_about_name);
+            editProfilePopup.close();
         })
         .catch((err) => {
             console.log(`Ошибка: ${err}`);
@@ -69,7 +76,7 @@ const handleProfileFormSubmit = (data) => {
         .finally(() => {
             editProfilePopup.isLoading(false);
         });
-    editProfilePopup.close();
+
 };
 
 function openPopupEdit() {

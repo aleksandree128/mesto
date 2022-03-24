@@ -5,7 +5,7 @@ export class Card {
         this._template = document.querySelector(cardTemplateSelector).content.querySelector(".elements__list");
         this._handlImageClick=handleImageClick;
         this._handleDeleteClick=handleDeleteClick
-        this._cardId = cardData.id;
+        this._cardId = cardData._id;
         this._userId = cardData.userId;
         this._ownerId = cardData.ownerId;
         this._handleLikeClick=handleLikeClick;
@@ -22,7 +22,7 @@ export class Card {
 
     _setEventListener() {
         this._deleteButton.addEventListener("click", this._handleDeleteClick);
-        this._cardElement.addEventListener("click", this._handleLikeClick);
+        this._cardLike.addEventListener("click", this._handleLikeClick);
         this._cardImage.addEventListener("click", this._handlImageClick);
     }
     isLiked(){

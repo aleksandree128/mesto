@@ -1,5 +1,5 @@
 import {FormValidator} from "../components/FormValidator";
-const validatorConfig ={
+export const validatorConfig ={
     formSelector: ".popup__name",
     inputSelector: ".popup__item",
     buttonSaveSelector: ".popup__save",
@@ -13,14 +13,10 @@ const profileModalWindow = document.querySelector(".popup_type_edit");
 const newCardModalWindow = document.querySelector(".popup_type_add-card");
 const inputProfileAvatar=document.querySelector(".popup_type_update-avatar")
 
-const profileFormValidator = profileModalWindow.querySelector(".popup__name");
-const editCardFormValidator = newCardModalWindow.querySelector(".popup__name");
-const avatarUpdateValidator=inputProfileAvatar.querySelector(".popup__name")
+export const profileFormValidator = profileModalWindow.querySelector(".popup__name");
+export const editCardFormValidator = newCardModalWindow.querySelector(".popup__name");
+export const avatarUpdateValidator=inputProfileAvatar.querySelector(".popup__name")
 
-
-export const editFormValidator=new FormValidator(validatorConfig, profileFormValidator);
-export const addCardFormValidator=new FormValidator(validatorConfig, editCardFormValidator);
-export const updateAvatarValidator=new FormValidator(validatorConfig, avatarUpdateValidator)
 
 export const editProfileButton = document.querySelector(".profile__edit-button");
 export const addCardButton = document.querySelector(".profile__add-button");

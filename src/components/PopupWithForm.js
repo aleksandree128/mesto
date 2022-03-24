@@ -23,7 +23,7 @@ export class PopupWithForm extends Popup {
         if(isLoading){
             this._buttonSumbit.textContent='Сохранение...'
         }else {
-            this._buttonSumbit.textContent=this._buttonSumbit
+            this._buttonSumbit.textContent='Сохранить'
         }
     }
     setEventListeners() {

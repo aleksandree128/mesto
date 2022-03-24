@@ -4,21 +4,21 @@ class Api {
         this._baseUrl = baseUrl;
     }
     getProfile() {
-        return fetch("https://nomoreparties.co/v1/cohort-37/users/me", {
+        return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers,
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
     getInitialCards() {
-        return fetch("https://mesto.nomoreparties.co/v1/cohort-37/cards", {
+        return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers,
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
     editProfile(name, about) {
-        return fetch("https://mesto.nomoreparties.co/v1/cohort-37/users/me", {
+        return fetch(`${this._baseUrl}/users/me`, {
             method: "PATCH",
             headers: this._headers,
             body: JSON.stringify({
@@ -27,11 +27,11 @@ class Api {
             }),
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 
     addCards(name, link) {
-        return fetch("https://mesto.nomoreparties.co/v1/cohort-37/cards", {
+        return fetch(`${this._baseUrl}/cards`, {
             method: "POST",
             headers: this._headers,
             body: JSON.stringify({
@@ -40,7 +40,7 @@ class Api {
             }),
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 
     deleteCard(id) {
@@ -50,7 +50,7 @@ class Api {
             headers: this._headers,
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 
     deleteLike(id) {
@@ -60,7 +60,7 @@ class Api {
             headers: this._headers,
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 
     addLike(id) {
@@ -70,13 +70,11 @@ class Api {
             headers: this._headers,
         })
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 
     updateAvatar(item) {
-        return fetch(
-            "https://mesto.nomoreparties.co/v1/cohort-37/users/me/avatar",
-            {
+        return fetch(`${this._baseUrl}/users/me/avatar`,{
                 method: "PATCH",
                 headers: this._headers,
                 body: JSON.stringify({
@@ -85,7 +83,7 @@ class Api {
             }
         )
             .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-            .catch(console.log);
+
     }
 }
 
