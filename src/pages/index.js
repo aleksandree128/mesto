@@ -29,24 +29,15 @@ addCardFormValidator.enableValidation();
 
 let userId;
 
-api.getProfile().then((res) => {
-    userInfo.setUserInfo(res.name, res.about, res.avatar);
-    userId = res._id;
-});
-
-api.getInitialCards().then((cardList) => {
-    cardList.forEach((data) => {
-        const card = createCard({
-            name: data.name,
-            link: data.link,
-            likes: data.likes,
-            _id: data._id,
-            userId: userId,
-            ownerId: data.owner._id,
-        });
-        section.addItem(card);
-    });
-});
+Promise.all([api.getProfile(),api.getInitialCards()])
+    .then(([userData,cards])=>{
+        userInfo.setUserInfo(userData.name, userData.about, userData.avatar)
+        userId=userData._id
+        section.renderItems(cards)
+    })
+    .catch((err) => {
+        console.log(`Ошибка: ${err}`);
+    })
 
 editProfileButton.addEventListener("click", () => openPopupEdit());
 addCardButton.addEventListener("click", () => {
@@ -94,7 +85,7 @@ function createCard(data) {
         likes: data.likes,
         _id: data._id,
         userId: userId,
-        ownerId: data._id},cardTemplateSelector,
+        ownerId: data.owner._id},cardTemplateSelector,
         ()=>{
             imagePopup.open(data.name, data.link);
         },
@@ -103,7 +94,7 @@ function createCard(data) {
             deleteCard.changeSubmitHandler(() => {
                 api
                     .deleteCard(card.getId())
-                    .then((res) => {
+                    .then(() => {
                         card.deleteCard();
                         deleteCard.close();
                     })
@@ -199,7 +190,6 @@ const userInfo = new UserInfo({
 
 const deleteCard = new PopupWithForm(".popup_type_delete-card");
 
-section.renderItems();
 imagePopup.setEventListeners();
 addCardPopup.setEventListeners();
 editProfilePopup.setEventListeners();
